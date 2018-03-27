@@ -10,9 +10,7 @@ app.get('/', (req, res) => res.send('Hello World!'))
 
 app.get('/numbergame/getnumber', (req, res) => {
 
-  var currentNum = testVal;
-  currentNum - 1;
-  res.send(currentNum.toString());
+    res.send(testVal.toString());
 
 });
 
@@ -21,7 +19,6 @@ app.post('/numbergame/setnumber',function(req, res){
   const userNumber = req.query.number;
   const expectedNumber = testVal;
   console.log(req.query)
-  console.log(userNumber)
   if (userNumber == expectedNumber) {
     res.status(200);
     res.end("CORRECT! You have claimed number: " + userNumber);
@@ -33,11 +30,11 @@ app.post('/numbergame/setnumber',function(req, res){
   };
 });
 
-app.listen(process.env.PORT || 5000, () => console.log('Example app listening on env port'))
+app.listen(process.env.PORT || 5000, () => console.log('Number app listening'))
 
 function increaseVal() {
   var tempVal = testVal
   testVal += 1;
-  console.log('testval increased to: ' + testVal );
+  console.log('Number increased to: ' + testVal );
   return tempVal;
 };

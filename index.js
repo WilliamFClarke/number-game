@@ -10,7 +10,9 @@ app.get('/', (req, res) => res.send('Hello World!'))
 
 app.get('/numbergame/getnumber', (req, res) => {
 
-  res.send(testVal.toString());
+  var currentNum = testVal;
+  currentNum - 1;
+  res.send(currentNum.toString());
 
 });
 
@@ -22,7 +24,7 @@ app.post('/numbergame/setnumber',function(req, res){
   console.log(userNumber)
   if (userNumber == expectedNumber) {
     res.status(200);
-    res.end("CORRECT! You have set number: " + userNumber);
+    res.end("CORRECT! You have claimed number: " + userNumber);
     increaseVal();
     return
   } else {

@@ -25,7 +25,7 @@ app.post('/numbergame/setnumber',function(req, res){
     increaseVal();
     return
   } else {
-    res.end("INCORRECT! the expected number is: " + expectedNumber);
+    res.end("INCORRECT! The expected number is: " + expectedNumber);
     return
   };
 });
